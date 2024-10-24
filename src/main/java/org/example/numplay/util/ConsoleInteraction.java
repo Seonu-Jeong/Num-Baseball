@@ -79,4 +79,29 @@ public class ConsoleInteraction {
 
         return result;
     }
+
+    public int changeLevel() {
+
+        Scanner sc = new Scanner(System.in);
+
+        int level;
+
+        while(true) {
+
+            System.out.println("설정하고자 하는 자리수를 입력하세요.");
+
+            level = sc.nextInt();
+
+            try {
+                if (level < 3 || level > 5)
+                    throw new Exception("난이도는 3,4,5 만 가능합니다 ");
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                continue;
+            }
+            break;
+        }
+
+        return level;
+    }
 }
