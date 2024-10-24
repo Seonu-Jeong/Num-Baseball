@@ -51,23 +51,23 @@ public class ConsoleInteraction {
                 }
 
                 if (digit[0] >= 1)
-                    throw new Exception("0을 포함할 수 없습니다");
+                    throw new Exception("0을 포함할 수 없습니다\n");
 
                 int cnt = 0;
 
                 for (int val : digit) {
                     if (val > 1)
-                        throw new Exception("중복된 숫자를 사용할 수 없습니다");
+                        throw new Exception("중복된 숫자를 사용할 수 없습니다\n");
 
                     cnt += val;
                 }
 
                 if (cnt != level)
-                    throw new Exception(level + "자리 숫자를 입력해주세요");
+                    throw new Exception(level + "자리 숫자를 입력해주세요\n");
 
                 result = num;
             } catch (NumberFormatException e) {
-                System.out.println("숫자만 입력해주세요");
+                System.out.println("숫자만 입력해주세요\n");
                 continue;
             } catch (Exception e) {
                 System.out.println(e.getMessage());
@@ -129,7 +129,7 @@ public class ConsoleInteraction {
             System.out.print(result[i]+mention[i]+" ");
         }
 
-        System.out.println();
+        System.out.println("\n");
     }
 
     public void end(){
