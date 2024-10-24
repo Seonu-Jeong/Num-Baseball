@@ -1,5 +1,6 @@
 package org.example.numplay.util;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ConsoleInteraction {
@@ -21,8 +22,7 @@ public class ConsoleInteraction {
                 case 3 -> Menu.END;
                 default -> throw new Exception("잘못된 숫자입력");
             };
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             menu = Menu.ERROR;
         }
@@ -30,11 +30,11 @@ public class ConsoleInteraction {
         return menu;
     }
 
-    public int getNum(int level){
+    public int getNum(int level) {
 
         int result;
 
-        while(true) {
+        while (true) {
             System.out.println("숫자를 입력하세요");
 
             Scanner sc = new Scanner(System.in);
@@ -63,7 +63,7 @@ public class ConsoleInteraction {
                 }
 
                 if (cnt != level)
-                    throw new Exception(level+"자리 숫자를 입력해주세요");
+                    throw new Exception(level + "자리 숫자를 입력해주세요");
 
                 result = num;
             } catch (NumberFormatException e) {
@@ -86,7 +86,7 @@ public class ConsoleInteraction {
 
         int level;
 
-        while(true) {
+        while (true) {
 
             System.out.println("설정하고자 하는 자리수를 입력하세요.");
 
@@ -103,5 +103,13 @@ public class ConsoleInteraction {
         }
 
         return level;
+    }
+
+    public void showHistory(List<Integer> gameHistory) {
+        int gameNum = 1;
+
+        for (Integer result : gameHistory) {
+            System.out.printf("%d번째 게임 : 시도횟수 - %d %n", gameNum++, result);
+        }
     }
 }
