@@ -113,12 +113,12 @@ public class ConsoleInteraction {
         }
     }
 
-    public boolean showResult(int[] result,int level){
+    public void showResult(int[] result,int level){
         int strike = result[0];
 
         if(strike==level){
             System.out.println("정답입니다!");
-            return true;
+            return;
         }
 
         String[] mention = {"스트라이크","볼","아웃"};
@@ -130,7 +130,5 @@ public class ConsoleInteraction {
         }
 
         System.out.println();
-
-        return false;
     }
 }
