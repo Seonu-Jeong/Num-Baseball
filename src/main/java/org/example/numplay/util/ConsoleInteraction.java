@@ -112,4 +112,25 @@ public class ConsoleInteraction {
             System.out.printf("%d번째 게임 : 시도횟수 - %d %n", gameNum++, result);
         }
     }
+
+    public boolean showResult(int[] result,int level){
+        int strike = result[0];
+
+        if(strike==level){
+            System.out.println("정답입니다!");
+            return true;
+        }
+
+        String[] mention = {"스트라이크","볼","아웃"};
+
+        for(int i=0;i<result.length;i++){
+            if(result[i]==0) continue;
+
+            System.out.print(result[i]+mention[i]+" ");
+        }
+
+        System.out.println();
+
+        return false;
+    }
 }
