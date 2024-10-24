@@ -19,9 +19,12 @@ public class BaseballGame {
 
             switch (consoleInteraction.selectMenu()) {
                 case START -> start();
+                case SET_LEVEL -> level = consoleInteraction.changeLevel();
+                case SHOW_HISTORY -> consoleInteraction.showHistory(gameHistory);
+                case END -> { consoleInteraction.end(); break outer; }
             }
 
-            System.out.println("");
+            System.out.println();
         }
 
     }
@@ -74,5 +77,6 @@ public class BaseballGame {
         }
         gameHistory.add(cnt);
     }
+
 
 }
