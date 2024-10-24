@@ -131,4 +131,8 @@ public class ConsoleInteraction {
 
         System.out.println();
     }
+
+    public void end(){
+        System.out.println("< 숫자 야구 게임을 종료합니다 >");
+    }
 }
