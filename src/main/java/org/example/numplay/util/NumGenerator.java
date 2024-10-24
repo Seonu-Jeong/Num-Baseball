@@ -24,4 +24,8 @@ public class NumGenerator {
         Collections.shuffle(answer);
 
     }
+
+    public List<Integer> getAnswer(){
+        return answer;
+    }
 }
