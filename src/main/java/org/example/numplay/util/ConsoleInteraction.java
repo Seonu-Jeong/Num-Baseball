@@ -3,8 +3,15 @@ package org.example.numplay.util;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * 사용자의 입력과 게임 출력을 콘솔로 당담하는 클래스  
+ */
 public class ConsoleInteraction {
 
+    /**
+     * 최초 사용자 메뉴 출력 및 사용자 입력을 받는 함수
+     * @return Menu 클래스의 상수 값 반환 
+     */
     public Menu selectMenu() {
         System.out.println("환영합니다! 원하시는 번호를 입력해주세요");
         System.out.println("0.자리수 설정 1.게임 시작하기 2.게임 기록보기 3.종료하기");
@@ -30,6 +37,11 @@ public class ConsoleInteraction {
         return menu;
     }
 
+    /**
+     * 사용자에게 게임 입력 받는 함수
+     * @param level
+     * @return 사용자의 입력값 반환
+     */
     public int getNum(int level) {
 
         int result;
@@ -80,6 +92,10 @@ public class ConsoleInteraction {
         return result;
     }
 
+    /**
+     * 사용자에게 변경할 레벨 값 입력 받는 함수
+     * @return 변경된 레벨 값 반환
+     */
     public int changeLevel() {
 
         Scanner sc = new Scanner(System.in);
@@ -105,6 +121,10 @@ public class ConsoleInteraction {
         return level;
     }
 
+    /**
+     * 사용자의 게임 히스토리 출력 함수
+     * @param gameHistory
+     */
     public void showHistory(List<Integer> gameHistory) {
         int gameNum = 1;
 
@@ -113,6 +133,11 @@ public class ConsoleInteraction {
         }
     }
 
+    /**
+     * 사용자의 입력에 대한 게임 결과 출력 함수
+     * @param result
+     * @param level
+     */
     public void showResult(int[] result,int level){
         int strike = result[0];
 
@@ -132,6 +157,9 @@ public class ConsoleInteraction {
         System.out.println("\n");
     }
 
+    /**
+     * 게임 종료 출력 함수
+     */
     public void end(){
         System.out.println("< 숫자 야구 게임을 종료합니다 >");
     }

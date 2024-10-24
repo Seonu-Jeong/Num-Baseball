@@ -5,7 +5,10 @@ import java.util.*;
 public class NumGenerator {
     List<Integer> answer;
 
-
+    /**
+     * 정답 생성 함수
+     * @param level
+     */
     public void makeAnswer(int level){
 
         HashSet<Integer> selected = new HashSet<>();

@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * 숫자 야국의 주요 로직을 실행하는 클래스
+ */
 public class BaseballGame {
 
     ConsoleInteraction consoleInteraction = new ConsoleInteraction();
@@ -12,6 +15,9 @@ public class BaseballGame {
     int level=3;
     List<Integer> gameHistory = new ArrayList<Integer>();
 
+    /**
+     * 게임 실행의 메인 로직
+     */
     public void play() {
 
         outer:
@@ -29,6 +35,11 @@ public class BaseballGame {
 
     }
 
+    /**
+     * 인자와 정답을 비교하는 함수
+     * @param num
+     * @return 스트라이크, 볼, 아웃을 배열로 반환
+     */
     public int[] compare(int num) {
 
         List<Integer> answer = numGenerator.getAnswer();
@@ -58,6 +69,9 @@ public class BaseballGame {
         return new int[]{strike, ball, out};
     }
 
+    /**
+     * 게임 실행 함수
+     */
     private void start(){
 
         numGenerator.makeAnswer(level);
